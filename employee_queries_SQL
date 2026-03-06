@@ -1,0 +1,33 @@
+SQL WHERE clause practice
+USE SalesDB;
+
+1. Employees working in Sales
+SELECT * FROM sales.employees
+WHERE Department = 'Sales';
+
+2. Employees earning more than 60000
+SELECT FirstName, LastName, Salary FROM sales.employees WHERE Salary > 60000;
+
+3. Female employees
+SELECT EmployeeID, FirstName, Gender FROM sales.employees WHERE Gender = 'F';
+
+4. Employees in Marketing department
+SELECT FirstName, LastName FROM sales.employees WHERE Department = 'Marketing';
+
+5. Employees earning between 55000 and 80000
+SELECT FirstName, Salary FROM sales.employees WHERE Salary BETWEEN 55000 AND 80000;
+
+6. Employees whose last name is NULL
+SELECT EmployeeID, FirstName FROM sales.employees WHERE LastName IS NULL;
+
+7. Employees with ManagerID = 1
+SELECT FirstName, ManagerID FROM sales.employees WHERE ManagerID = 1;
+
+8. Employees earning less than 60000
+SELECT FirstName, Salary FROM sales.employees WHERE Salary < 60000;
+
+9. Male employees in Sales
+SELECT FirstName, Gender, Department FROM sales.employees WHERE Gender = 'M' AND Department = 'Sales';
+
+10. Employees not in Marketing
+SELECT FirstName, Department FROM sales.employees WHERE Department <> 'Marketing';
