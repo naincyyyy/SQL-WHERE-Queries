@@ -1,0 +1,118 @@
+1. Total number of athletes
+SELECT COUNT(*) AS total_athletes FROM olympics;
+
+
+2. ⁠Average age of athletes
+SELECT AVG(Age) AS average_age FROM olympics;
+
+
+3. ⁠Maximum height
+SELECT MAX(Height) AS max_height FROM olympics;
+
+
+4. ⁠Minimum weight
+SELECT MIN(Weight) AS min_weight FROM olympics;
+
+
+5. ⁠Count female athletes
+SELECT COUNT(*) AS female_athletes FROM olympics WHERE Sex = 'F';
+
+
+6. ⁠Athletes who participated in Summer Olympics
+SELECT COUNT(*) AS summer_athletes FROM olympics WHERE Season = 'Summer';
+
+
+7. ⁠Average weight
+SELECT AVG(Weight) AS average_weight FROM olympics;
+
+
+8. ⁠Count distinct sports
+SELECT COUNT(DISTINCT Sport) AS total_sports FROM olympics;
+
+
+9. ⁠Youngest athlete
+SELECT MIN(Age) AS youngest_age FROM olympics;
+
+
+10. ⁠Oldest athlete
+SELECT MAX(Age) AS oldest_age FROM olympics;
+
+
+11. Athletes per sport
+SELECT Sport, COUNT(*) AS athlete_count FROM olympics GROUP BY Sport;
+
+
+12. ⁠Average age per sport
+SELECT Sport, AVG(Age) AS average_age FROM olympics GROUP BY Sport;
+
+
+13. ⁠Maximum height per sport
+SELECT Sport, MAX(Height) AS max_height FROM olympics GROUP BY Sport;
+
+
+14. ⁠Athletes from each country (team)
+SELECT Team, COUNT(*) AS athlete_count FROM olympics GROUP BY Team;
+
+
+15. ⁠Average weight by sex
+SELECT Sex, AVG(Weight) AS avg_weight FROM olympics GROUP BY Sex;
+
+
+16. ⁠Minimum age per Olympic year
+SELECT Year, MIN(Age) AS youngest FROM olympics GROUP BY Year;
+
+
+17. ⁠Medals won by each country
+SELECT Team, COUNT(Medal) AS total_medals FROM olympics WHERE Medal IS NOT NULL GROUP BY Team;
+
+
+18. ⁠Average height per season
+SELECT Season, AVG(Height) AS avg_height FROM olympics GROUP BY Season;
+
+
+19. ⁠Maximum weight per sport
+SELECT Sport, MAX(Weight) AS max_weight FROM olympics GROUP BY Sport;
+
+
+20. ⁠Athletes participated each year
+SELECT Year, COUNT(*) AS athlete_count FROM olympics GROUP BY Year;
+
+
+21. ⁠Sports where average age > 30
+SELECT Sport, AVG(Age) AS avg_age FROM olympics GROUP BY Sport HAVING AVG(Age) > 30;
+
+
+22. ⁠Teams with more than 1000 athletes
+SELECT Team, COUNT(*) AS athlete_count FROM olympics GROUP BY Team HAVING COUNT(*) > 1000;
+
+
+23. ⁠Sports with more than 500 athletes
+SELECT Sport, COUNT(*) AS athlete_count FROM olympics GROUP BY Sport HAVING COUNT(*) > 500;
+
+
+24. ⁠Olympic years with more than 2000 athletes
+SELECT Year, COUNT(*) AS athlete_count FROM olympics GROUP BY Year HAVING COUNT(*) > 2000;
+
+
+25. ⁠Teams with average height > 180
+SELECT Team, AVG(Height) AS avg_height FROM olympics GROUP BY Team HAVING AVG(Height) > 180;
+
+
+26. ⁠Sports where max weight > 120
+SELECT Sport, MAX(Weight) AS max_weight FROM olympics GROUP BY Sport HAVING MAX(Weight) > 120;
+
+
+27. ⁠Countries with more than 100 medals
+SELECT Team, COUNT(Medal) AS medal_count FROM olympics WHERE Medal IS NOT NULL GROUP BY Team HAVING COUNT(Medal) > 100;
+
+
+28. ⁠Sports where average weight > 80
+SELECT Sport, AVG(Weight) AS avg_weight FROM olympics GROUP BY Sport HAVING AVG(Weight) > 80;
+
+
+29. ⁠Olympic years with more than 100 medals
+SELECT Year, COUNT(Medal) AS medal_count FROM olympics WHERE Medal IS NOT NULL GROUP BY Year HAVING COUNT(Medal) > 100;
+
+
+30. ⁠Teams where average age > 28
+SELECT Team, AVG(Age) AS avg_age FROM olympics GROUP BY Team HAVING AVG(Age) > 28;
