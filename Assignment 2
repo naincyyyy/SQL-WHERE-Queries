@@ -1,0 +1,84 @@
+1. Distinct sports played in Olympics (alphabetically)
+SELECT DISTINCT Sport FROM olympics ORDER BY Sport ASC;
+
+
+2. Top 10 oldest athhttps://github.com/naincyyyy/SQL-WHERE-Queriesletes
+SELECT Name, Age FROM olympics ORDER BY Age DESC LIMIT 10;
+
+
+3. Athletes aged between 20 and 25
+SELECT Name, Age FROM olympics WHERE Age BETWEEN 20 AND 25 ORDER BY Age DESC;
+
+
+4. Distinct countries (NOC) after year 2000
+SELECT DISTINCT NOC FROM olympics WHERE Year > 2000;
+
+
+5. First 15 records where Sport - Athletics or Swimming
+SELECT * FROM olympics WHERE Sport IN ('Athletics', "Swimming') LIMIT 15;
+
+
+6. Athletes whose name starts with A 
+SELECT Name FROM olympics WHERE Name LIKE ®A%*;
+
+7. Athlete records where medal is NOT NULL
+SELECT * FROM olympics WHERE Medal IS NOT NULL ORDER BY Year ASC;
+
+
+8. Olympic events containing "Freestyle"
+SELECT DISTINCT Event FROM olympics WHERE Event LIKE %Freestyle%*;
+
+9. Distinct athletes who won Gold in Athletics or Swimming
+SELECT DISTINCT Name FROM olympics WHERE Medal = 'Gold' AND Sport IN ('Athletics', 'Swimming');
+
+
+10. Top 20 athletes by height between 180 and 200
+SELECT TOP 20 Name, Height FROM olympics WHERE Height BETWEEN 180 AND 200 ORDER BY Height DESC;
+
+
+11. ⁠Athletes between 1996 and 2016 from USA, CHN, IND
+SELECT * FROM olympics WHERE Year BETWEEN 1996 AND 2016 AND NOC IN ('USA', 'CHN', 'IND');
+
+
+12. ⁠Records where sport is NOT Athletics and medal is Silver
+SELECT * FROM olympics WHERE Sport <> 'Athletics' AND Medal = 'Silver' ORDER BY Year DESC;
+
+
+13. ⁠Distinct Olympic Games where team contains “United” 
+SELECT DISTINCT Games FROM olympics WHERE Team LIKE '%United%';
+
+
+14. ⁠Latest 10 records where Winter athletes won any medal
+SELECT TOP 10 * FROM olympics WHERE Season = 'Winter' AND Medal IS NOT NULL ORDER BY Year DESC;
+
+
+15. ⁠Athletes whose name contains Singh or Kumar after 2010
+SELECT * FROM olympics WHERE (Name LIKE '%Singh%' OR Name LIKE '%Kumar%') AND Year > 2010;
+
+
+16. Top 5 most recent Olympic events where Gold medals were won
+SELECT TOP 5 Event, Year, Name FROM olympics WHERE Medal = 'Gold' ORDER BY Year DESC;
+
+
+17. ⁠Distinct sports where athletes aged 30–40 won Bronze
+SELECT DISTINCT Sport FROM olympics WHERE Medal = 'Bronze' AND Age BETWEEN 30 AND 40;
+
+
+18. ⁠Athlete records where Sport = Boxing/Wrestling/Judo and Year between 2000–2020
+SELECT * FROM olympics WHERE Sport IN ('Boxing', 'Wrestling', 'Judo') AND Year BETWEEN 2000 AND 2020 ORDER BY Weight ASC;
+
+
+19. ⁠Top 10 tallest athletes from European countries who won any medal
+SELECT TOP 10 Name, Height, NOC, Medal FROM olympics WHERE NOC IN ('GBR','FRA','GER','ITA','ESP','NED','SWE','NOR','DEN','SUI') AND Medal IS NOT NULL ORDER BY Height DESC;
+
+
+20. ⁠Athletes in Summer Olympics with Relay events after 2008
+SELECT * FROM olympics WHERE Season = 'Summer' AND Event LIKE '%Relay%' AND Year > 2008 ORDER BY Year, Name;
+
+
+21. ⁠Distinct athletes who won Gold in events starting with “Men”
+SELECT DISTINCT Name FROM olympics WHERE Medal = 'Gold' AND Event LIKE 'Men%';
+
+
+22. ⁠Last 15 athlete records where Medal is Gold or Silver and Age 18–23
+SELECT TOP 15 * FROM olympics WHERE Medal IN ('Gold','Silver') AND Age BETWEEN 18 AND 23 ORDER BY Year DESC;
